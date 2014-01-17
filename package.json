@@ -7,15 +7,20 @@
   },
   "main": "game.js",
   "scripts": {
-    "test": "",
-    "start": ""
+    "start": "beefy game.js:bundle.js --live",
+    "bundle": "browserify game.js -o bundle.js"
   },
   "dependencies": {
     "crtrdg-keyboard": "0.0.2",
     "crtrdg-goal": "0.0.0",
     "crtrdg-scene": "0.0.2",
     "crtrdg-gameloop": "~0.1.0",
-    "crtrdg-entity": "0.0.8"
+    "crtrdg-entity": "0.0.8",
+    "inherits": "~2.0.1",
+    "crtrdg-mouse": "0.0.3"
   },
-  "devDependencies": {}
+  "devDependencies": {
+    "beefy": "~0.7.1",
+    "browserify": "~3.20.0"
+  }
 }
