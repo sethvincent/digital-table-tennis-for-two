@@ -35,8 +35,10 @@ function Ball(options){
 
   this.on('draw', function(c){
     c.save();
-    c.fillStyle = self.color;
-    c.fillRect(self.position.x, self.position.y, self.size.x, self.size.y);
+    if (this.game.currentScene.name === 'match'){
+      c.fillStyle = self.color;
+      c.fillRect(self.position.x, self.position.y, self.size.x, self.size.y);
+    }
     c.restore();
   });
 }

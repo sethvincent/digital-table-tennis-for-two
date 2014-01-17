@@ -50,6 +50,13 @@ game.on('draw', function(c){
 	c.font = "bold 50px sans-serif";
 	c.fillText(playerOne.points, 100, 100);
 	c.fillText(playerTwo.points, this.width - 140, 100);
+
+	if (this.currentScene.name === 'menu') {
+		c.fillText('first to 10 wins. click to play.', 300, 250);
+		c.fillText('player one: W & S keys.', 300, 350);
+		c.fillText('player two: up & down keys.', 300, 450);
+	}
+
 	c.restore();
 });
 
@@ -115,7 +122,6 @@ ball.on('update', function(){
 });
 
 ball.on('goal', function(side){
-	console.log(side)
 	if (side == 'left') playerTwo.points++;
 	if (side == 'right') playerOne.points++
 	resetMatch();
